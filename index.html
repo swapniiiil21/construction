@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Stone Enterprises - Construction Portfolio</title>
+    <!-- Google Fonts - Inter for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN - This ensures the exact same styling as the React version -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles if any, but mostly relying on Tailwind classes now */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Tailwind's preflight (base styles) will handle margin reset etc. */
+        }
+        /* Ensure focus rings are consistent */
+        input[type="text"]:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue focus ring */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-6 shadow-lg rounded-b-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-4xl font-extrabold tracking-tight">BLUE STONE ENTERPRISES</h1>
+                <p class="text-lg mt-1 font-light opacity-90">INNOVATION AT SCALE</p>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-blue-200 transition duration-300 text-lg">Home</a></li>
+                    <li><a href="#gallery" class="hover:text-blue-200 transition duration-300 text-lg">Gallery</a></li>
+                    <li><a href="#contact" class="hover:text-blue-200 transition duration-300 text-lg">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-white py-20 px-6 text-center shadow-md rounded-lg mx-4 mt-8">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-blue-800 mb-4">Building Dreams, One Stone at a Time</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Welcome to Blue Stone Enterprises, where innovation meets construction. We deliver high-quality projects with precision and dedication.
+            </p>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+                View Our Projects
+            </button>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 px-6 bg-white shadow-md rounded-lg mx-4 mt-8">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-blue-800 mb-10">Our Work Gallery</h2>
+
+            <!-- Image Upload/Add Section -->
+            <div class="mb-12 p-6 bg-blue-50 rounded-lg shadow-inner flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <input
+                    type="text"
+                    id="newImageUrl"
+                    placeholder="Enter image URL to add to gallery"
+                    class="w-full md:w-2/3 p-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                    id="addImageButton"
+                    class="w-full md:w-1/3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transform hover:scale-105 transition duration-300"
+                >
+                    Add Photo
+                </button>
+            </div>
+            <p class="text-center text-gray-500 mb-8">
+                (Note: For a real website, this "Add Photo" functionality would require a backend to store images. Here, it simply adds a URL to display.)
+            </p>
+
+            <!-- Image Grid -->
+            <div id="imageGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Images will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-blue-800 text-white shadow-md rounded-lg mx-4 mt-8">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <!-- Phone Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-3 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <p class="text-lg font-semibold">Phone</p>
+                    <p class="text-md">Sahil Pardeshi: 8055002726</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <!-- Website Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-3 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="text-lg font-semibold">Website</p>
+                    <p class="text-md"><a href="http://www.bluestoneenterprises.com" target="_blank" rel="noopener noreferrer" class="hover:underline">www.bluestoneenterprises.com</a></p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <!-- Email Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-3 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <p class="text-lg font-semibold">Email</p>
+                    <p class="text-md"><a href="mailto:bluestoneenterprises2726@gmail.com" class="hover:underline">bluestoneenterprises2726@gmail.com</a></p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <!-- Address Icon (SVG) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mb-3 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <p class="text-lg font-semibold">Address</p>
+                    <p class="text-md">Pingle Wasti Mundhwa Road Pune - 411036</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-6 px-6 mt-8 rounded-t-lg">
+        <div class="container mx-auto text-center">
+            <p class="text-md">&copy; <span id="currentYear"></span> Blue Stone Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get current year for footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Initial images for the gallery
+        let images = [
+            'https://placehold.co/600x400/ADD8E6/000000?text=Project+Alpha',
+            'https://placehold.co/600x400/90EE90/000000?text=Building+Site+View',
+            'https://placehold.co/600x400/FFD700/000000?text=Foundation+Work',
+            'https://placehold.co/600x400/FFA07A/000000?text=Interior+Finishing',
+            'https://placehold.co/600x400/BA55D3/000000?text=Structural+Detail',
+            'https://placehold.co/600x400/87CEEB/000000?text=Landscape+Design',
+        ];
+
+        const imageGrid = document.getElementById('imageGrid');
+        const newImageUrlInput = document.getElementById('newImageUrl');
+        const addImageButton = document.getElementById('addImageButton');
+
+        // Function to render images in the gallery
+        function renderImages() {
+            imageGrid.innerHTML = ''; // Clear existing images
+            images.forEach((image, index) => {
+                const imageCard = document.createElement('div');
+                // Apply the same classes for styling and hover effects as in React version
+                imageCard.className = 'bg-gray-100 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300';
+                imageCard.innerHTML = `
+                    <img
+                        src="${image}"
+                        alt="Construction Project ${index + 1}"
+                        class="w-full h-64 object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/000000?text=Image+Not+Found';"
+                    />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Project Title ${index + 1}</h3>
+                        <p class="text-gray-600 text-sm">
+                            A brief description of the construction project, highlighting key aspects and challenges overcome.
+                        </p>
+                    </div>
+                `;
+                imageGrid.appendChild(imageCard);
+            });
+        }
+
+        // Function to handle adding a new image
+        function handleAddImage() {
+            const url = newImageUrlInput.value.trim();
+            if (url !== '') {
+                images.push(url); // Add the new URL
+                renderImages();    // Re-render the gallery
+                newImageUrlInput.value = ''; // Clear the input field
+            }
+        }
+
+        // Event listener for the Add Photo button
+        addImageButton.addEventListener('click', handleAddImage);
+
+        // Initial render when the page loads
+        document.addEventListener('DOMContentLoaded', renderImages);
+    </script>
+</body>
+</html>
